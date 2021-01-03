@@ -79,13 +79,12 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Contract": {
+		"on_submit": "oic_retail.hook_methods.on_submit_contract",
+	}
+}
+
 
 # Scheduled Tasks
 # ---------------
@@ -126,4 +125,3 @@ app_license = "MIT"
 # override_doctype_dashboards = {
 # 	"Task": "oic_retail.task.get_dashboard_data"
 # }
-
