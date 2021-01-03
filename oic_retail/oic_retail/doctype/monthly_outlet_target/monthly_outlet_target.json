@@ -1,0 +1,205 @@
+{
+ "autoname": "{sales_person}.{month}.{year}",
+ "creation": "2021-01-03 21:50:25.857499",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sales_person",
+  "month",
+  "year",
+  "days_info_section",
+  "no_of_holidays",
+  "events",
+  "others",
+  "column_break_8",
+  "meetings",
+  "sundays",
+  "outlet_targets_section",
+  "no_of_outlets_planned",
+  "territory_type",
+  "monthly_listing_target",
+  "cumulative__target_listing",
+  "column_break_16",
+  "prospects_on_hand",
+  "monthly_acquisition_target",
+  "cumulative_target_acquisition"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sales Person",
+   "options": "Sales Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Month",
+   "options": "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec",
+   "reqd": 1
+  },
+  {
+   "default": "2021",
+   "fieldname": "year",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Year",
+   "options": "2021\n2022\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030",
+   "reqd": 1
+  },
+  {
+   "fieldname": "days_info_section",
+   "fieldtype": "Section Break",
+   "label": "Days Info"
+  },
+  {
+   "fieldname": "no_of_holidays",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "No Of Holidays",
+   "reqd": 1
+  },
+  {
+   "fieldname": "events",
+   "fieldtype": "Int",
+   "label": "Events",
+   "reqd": 1
+  },
+  {
+   "fieldname": "others",
+   "fieldtype": "Data",
+   "label": "Others"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meetings",
+   "fieldtype": "Int",
+   "label": "Meetings",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sundays",
+   "fieldtype": "Int",
+   "label": "Sundays",
+   "reqd": 1
+  },
+  {
+   "fieldname": "outlet_targets_section",
+   "fieldtype": "Section Break",
+   "label": "Outlet Targets"
+  },
+  {
+   "fieldname": "no_of_outlets_planned",
+   "fieldtype": "Int",
+   "label": "No Of Outlets Planned"
+  },
+  {
+   "fieldname": "territory_type",
+   "fieldtype": "Link",
+   "label": "Territory Type",
+   "options": "Territory Type CT",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_listing_target",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Monthly Listing Target",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cumulative__target_listing",
+   "fieldtype": "Data",
+   "label": "Cumulative  Target Listing"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "prospects_on_hand",
+   "fieldtype": "Int",
+   "label": "Prospects On Hand",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monthly_acquisition_target",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Monthly Acquisition Target",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cumulative_target_acquisition",
+   "fieldtype": "Int",
+   "label": "Cumulative Target Acquisition"
+  }
+ ],
+ "modified": "2021-01-03 21:52:39.276259",
+ "modified_by": "Administrator",
+ "module": "OIC Retail",
+ "name": "Monthly Outlet Target",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Master Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,100 @@
+{
+ "autoname": "naming_series:",
+ "creation": "2021-01-03 21:32:01.382732",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "outlet",
+  "visit_purpose",
+  "visit_remarks",
+  "column_break_4",
+  "sales_person",
+  "visit_datetime",
+  "supervisor",
+  "naming_series"
+ ],
+ "fields": [
+  {
+   "fieldname": "outlet",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Outlet",
+   "options": "Retail Outlet",
+   "reqd": 1
+  },
+  {
+   "fieldname": "visit_purpose",
+   "fieldtype": "Table MultiSelect",
+   "in_standard_filter": 1,
+   "label": "Visit Purpose",
+   "options": "Visit Activity CT",
+   "reqd": 1
+  },
+  {
+   "fieldname": "visit_remarks",
+   "fieldtype": "Small Text",
+   "label": "Visit Remarks"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "visit_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Visit DateTime",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supervisor",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Supervisor",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "options": "OV-YY.MM.DD.-.#",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sales Person",
+   "options": "Sales Person",
+   "reqd": 1
+  }
+ ],
+ "modified": "2021-01-03 21:54:42.350695",
+ "modified_by": "Administrator",
+ "module": "OIC Retail",
+ "name": "Outlet Visit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
