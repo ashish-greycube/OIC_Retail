@@ -1,0 +1,33 @@
+{
+ "add_total_row": 0,
+ "creation": "2021-01-03 09:53:47.407106",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2021-01-03 10:35:22.726794",
+ "modified_by": "Administrator",
+ "module": "OIC Retail",
+ "name": "Expenses Statement",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Expense Claim",
+ "report_name": "Expenses Statement",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "HR Manager"
+  },
+  {
+   "role": "Employee"
+  },
+  {
+   "role": "Expense Approver"
+  },
+  {
+   "role": "HR User"
+  }
+ ]
+}
