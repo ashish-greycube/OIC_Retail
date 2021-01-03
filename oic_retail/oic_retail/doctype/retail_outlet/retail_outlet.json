@@ -50,7 +50,10 @@
   "territory",
   "lenskart_feedback",
   "difference_u_lenskart",
-  "monthly_sales_promo_budget"
+  "monthly_sales_promo_budget",
+  "section_break_47",
+  "sales_person",
+  "outlet_location"
  ],
  "fields": [
   {
@@ -306,9 +309,25 @@
   {
    "fieldname": "column_break_7",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_47",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "outlet_location",
+   "fieldtype": "Geolocation",
+   "label": "Outlet Location"
   }
  ],
- "modified": "2021-01-03 19:11:29.494226",
+ "modified": "2021-01-03 22:05:55.618306",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Retail Outlet",
