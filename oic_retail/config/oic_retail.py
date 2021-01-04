@@ -12,6 +12,12 @@ def get_data():
                     "type": "doctype",
                     "label": _("Retail Outlet"),
                 },
+                                {
+                    "name": "Outlet Visit",
+                    "type": "doctype",
+                    "label": _("Outlet Visit"),
+                },
+
             ]
         },
         {
@@ -27,6 +33,12 @@ def get_data():
                             "type": "doctype",
                             "label": _("State"),
                         },
+                            {
+                                "name": "Territory Type CT",
+                            "type": "doctype",
+                            "label": _("Territory Type"),
+                        },
+
                     ]
         },
         {
