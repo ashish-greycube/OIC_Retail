@@ -64,9 +64,11 @@
    "reqd": 1
   },
   {
+   "default": "Retailer",
    "fieldname": "outlet_type",
-   "fieldtype": "Data",
-   "label": "Outlet Type"
+   "fieldtype": "Select",
+   "label": "Outlet Type",
+   "options": "Retailer\nEye Hospital\nOptometrist"
   },
   {
    "fieldname": "address_info_section",
@@ -327,7 +329,7 @@
    "label": "Outlet Location"
   }
  ],
- "modified": "2021-01-03 22:05:55.618306",
+ "modified": "2021-01-04 09:10:46.150362",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Retail Outlet",

@@ -1,91 +1,92 @@
 {
-  "autoname": "field:city_abbreviation",
-  "creation": "2021-01-03 06:54:31.549405",
-  "doctype": "DocType",
-  "editable_grid": 1,
-  "engine": "InnoDB",
-  "field_order": [
-    "city_name",
-    "city_abbreviation",
-    "state",
-    "state_abbreviation"
-  ],
-  "fields": [
-    {
-      "fieldname": "city_name",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "City Name",
-      "reqd": 1
-    },
-    {
-      "fieldname": "city_abbreviation",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "City Abbreviation",
-      "reqd": 1,
-      "unique": 1
-    },
-    {
-      "fieldname": "state",
-      "fieldtype": "Link",
-      "in_list_view": 1,
-      "label": "State",
-      "options": "State CT",
-      "reqd": 1
-    },
-    {
-      "fetch_from": "state.abbreviation",
-      "fieldname": "state_abbreviation",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "label": "State Abbreviation",
-      "read_only": 1,
-      "reqd": 1
-    }
-  ],
-  "modified": "2021-01-03 06:54:31.549405",
-  "modified_by": "Administrator",
-  "module": "OIC Retail",
-  "name": "City CT",
-  "owner": "Administrator",
-  "permissions": [
-    {
-      "create": 1,
-      "delete": 1,
-      "email": 1,
-      "export": 1,
-      "print": 1,
-      "read": 1,
-      "report": 1,
-      "role": "System Manager",
-      "share": 1,
-      "write": 1
-    },
-    {
-      "email": 1,
-      "export": 1,
-      "print": 1,
-      "read": 1,
-      "report": 1,
-      "role": "All",
-      "share": 1
-    },
-    {
-      "create": 1,
-      "delete": 1,
-      "email": 1,
-      "export": 1,
-      "print": 1,
-      "read": 1,
-      "report": 1,
-      "role": "Sales Master Manager",
-      "share": 1,
-      "write": 1
-    }
-  ],
-  "quick_entry": 1,
-  "sort_field": "modified",
-  "sort_order": "DESC",
-  "track_changes": 1
+ "autoname": "field:city_name",
+ "creation": "2021-01-03 06:54:31.549405",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "city_name",
+  "city_abbreviation",
+  "state",
+  "state_abbreviation"
+ ],
+ "fields": [
+  {
+   "fieldname": "city_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "city_abbreviation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City Abbreviation",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State CT",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "state.abbreviation",
+   "fieldname": "state_abbreviation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "State Abbreviation",
+   "read_only": 1,
+   "reqd": 1
+  }
+ ],
+ "modified": "2021-01-04 09:13:02.319654",
+ "modified_by": "Administrator",
+ "module": "OIC Retail",
+ "name": "City CT",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Master Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
 }
