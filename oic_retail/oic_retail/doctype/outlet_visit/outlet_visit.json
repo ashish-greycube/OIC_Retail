@@ -6,6 +6,8 @@
  "engine": "InnoDB",
  "field_order": [
   "outlet",
+  "outlet_name",
+  "outlet_type",
   "visit_purpose",
   "visit_remarks",
   "column_break_4",
@@ -73,9 +75,21 @@
    "label": "Sales Person",
    "options": "Sales Person",
    "reqd": 1
+  },
+  {
+   "fetch_from": "outlet.outlet_name",
+   "fieldname": "outlet_name",
+   "fieldtype": "Read Only",
+   "label": "Outlet Name"
+  },
+  {
+   "fetch_from": "outlet.outlet_type",
+   "fieldname": "outlet_type",
+   "fieldtype": "Read Only",
+   "label": "Outlet Type"
   }
  ],
- "modified": "2021-01-03 21:54:42.350695",
+ "modified": "2021-01-04 11:40:02.198279",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Outlet Visit",
