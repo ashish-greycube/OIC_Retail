@@ -1,5 +1,5 @@
 {
- "autoname": "naming_series:",
+ "autoname": "format:{state_abbreviation}-{city_abbreviation}-{#}",
  "creation": "2021-01-03 07:28:06.492772",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -54,8 +54,7 @@
   "monthly_sales_promo_budget",
   "section_break_47",
   "sales_person",
-  "outlet_location",
-  "naming_series"
+  "outlet_location"
  ],
  "fields": [
   {
@@ -352,17 +351,9 @@
   {
    "fieldname": "column_break_2",
    "fieldtype": "Column Break"
-  },
-  {
-   "default": "{state_abbreviation}-{city_abbreviation}-.#",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Series",
-   "options": "{state_abbreviation}-{city_abbreviation}-.#",
-   "reqd": 1
   }
  ],
- "modified": "2021-01-04 17:39:06.448597",
+ "modified": "2021-01-04 18:04:09.015004",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Retail Outlet",
