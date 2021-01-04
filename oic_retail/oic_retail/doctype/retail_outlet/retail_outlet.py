@@ -35,11 +35,23 @@ class RetailOutlet(Document):
                 self.outlet_name: json.dumps({"full_name": self.outlet_name})
             })
 
+        # sales_person = frappe.db.sql("""
+        #         select sp.name
+        #         from tabEmployee e
+        #         inner join `tabSales Person` sp on sp.employee = e.name
+        #         where e.user_id = %(user)s""", dict(user=frappe.session.user))
+
+        # if not sales_person:
+        #     frappe.throw("%s not associated with a Sales Person" % frappe.session.user)
+
         customer = frappe.get_doc("Customer", customer[0])
         customer.append("sales_team", {
-        "sales_person": frappe.session.user,
+        "sales_person": self.sales_person,
         "allocated_percentage": 100
         })
+        customer.account_manager = frappe.session.user
+        if self.territory:
+            customer.territory = self.territory
         customer.save()
 
     def make_address(self):
