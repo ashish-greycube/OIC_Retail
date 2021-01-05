@@ -39,7 +39,7 @@ app_license = "MIT"
 
 # website user home page (by Role)
 # role_home_page = {
-#	"Role": "home_page"
+# 	"Role": "home_page"
 # }
 
 # Website user home page (by function)
@@ -81,9 +81,10 @@ after_migrate = "oic_retail.hook_methods.after_migrate"
 # Hook on document methods and events
 
 doc_events = {
-	"Contract": {
-		"on_submit": "oic_retail.hook_methods.on_submit_contract",
-	}
+    "Contract": {
+        "on_submit": "oic_retail.hook_methods.on_submit_contract",
+        "on_cancel": "oic_retail.hook_methods.on_cancel_contract",
+    }
 }
 
 

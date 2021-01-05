@@ -8,11 +8,17 @@ import frappe
 
 
 def on_submit_contract(doc, method):
-    from oic_retail.oic_retail.doctype.retail_outlet.retail_outlet import (
-        update_outlet_type,
-    )
+    frappe.db.set_value("Customer", doc.party_name, "outlet_status_cf", "Acquired")
+    outlet = frappe.db.get_value("Customer", doc.party_name, "retail_outlet_cf")
+    if outlet:
+        frappe.db.set_value("Retail Outlet", outlet, "outlet_status", "Acquired")
 
-    update_outlet_type(doc.party_name)
+
+def on_cancel_contract(doc, method):
+    frappe.db.set_value("Customer", doc.party_name, "outlet_status_cf", "Listed")
+    outlet = frappe.db.get_value("Customer", doc.party_name, "retail_outlet_cf")
+    if outlet:
+        frappe.db.set_value("Retail Outlet", outlet, "outlet_status", "Listed")
 
 
 def after_migrate():
@@ -25,6 +31,17 @@ def after_migrate():
             "fieldtype": "Link",
             "options": "Retail Outlet",
             "allow_in_quick_entry": 1,
+        },
+        {
+            "doctype": "Custom Field",
+            "dt": "Customer",
+            "label": "Outlet Status",
+            "fieldname": "outlet_status_cf",
+            "fieldtype": "Select",
+            "options": "Listed\nAcquired",
+            "allow_in_quick_entry": 1,
+            "translatable": 0,
+            "insert_after": "retail_outlet_cf",
         },
         {
             "doctype": "Custom Field",

@@ -93,9 +93,3 @@ class RetailOutlet(Document):
 
         return contact
 
-
-def update_outlet_type(customer_name):
-    outlet = frappe.get_all("Retail Outlet", {"outlet_name": customer_name})
-    if outlet:
-        frappe.db.set_value("Retail Outlet", outlet[0].name, "outlet_type", "Confirmed")
-        frappe.db.commit()
