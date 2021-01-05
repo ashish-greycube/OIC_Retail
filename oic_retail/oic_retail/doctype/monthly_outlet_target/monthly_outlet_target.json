@@ -1,5 +1,5 @@
 {
- "autoname": "{sales_person}.{month}.{year}",
+ "autoname": "format:{sales_person}-{month}-{year}",
  "creation": "2021-01-03 21:50:25.857499",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -145,7 +145,7 @@
    "label": "Cumulative Target Acquisition"
   }
  ],
- "modified": "2021-01-03 21:52:39.276259",
+ "modified": "2021-01-05 10:06:14.002970",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Monthly Outlet Target",
