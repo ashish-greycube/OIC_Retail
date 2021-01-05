@@ -42,7 +42,7 @@ def get_data(filters):
         ),
         filters,
         as_dict=True,
-        debug=True,
+        debug=0,
     )
 
     if not data:
