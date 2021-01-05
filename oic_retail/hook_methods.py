@@ -42,6 +42,7 @@ def after_migrate():
             "allow_in_quick_entry": 1,
             "translatable": 0,
             "insert_after": "retail_outlet_cf",
+            "read_only": 1,
         },
         {
             "doctype": "Custom Field",

@@ -3,7 +3,11 @@
 
 frappe.ui.form.on("Retail Outlet", {
   refresh: function (frm) {
-    //
+    //collapse dashboard
+    setTimeout(() => {
+      frm.dashboard.section.find(".section-head").click();
+    }, 250);
+
     if (frm.is_new()) {
       frappe.db.get_value(
         "Employee",

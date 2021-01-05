@@ -13,26 +13,26 @@ from frappe.utils import cint
 
 class RetailOutlet(Document):
     def after_insert(self):
-        # if self.is_new():
-        self.make_customer()
-        self.make_address()
-        self.make_contact(
-            {
-                "full_name": self.outlet_owner,
-                "mobile_no": self.contact_number,
-                "email_id": self.contact_email,
-                "is_primary_contact": 1,
-            }
-        )
-        if self.manager:
+        if self.outlet_status == "Listed":
+            self.make_customer()
+            self.make_address()
             self.make_contact(
                 {
-                    "full_name": self.manager,
-                    "mobile_no": self.manager_contact,
-                    "email_id": self.manager_email,
-                    "is_primary_contact": 0,
+                    "full_name": self.outlet_owner,
+                    "mobile_no": self.contact_number,
+                    "email_id": self.contact_email,
+                    "is_primary_contact": 1,
                 }
             )
+            if self.manager:
+                self.make_contact(
+                    {
+                        "full_name": self.manager,
+                        "mobile_no": self.manager_contact,
+                        "email_id": self.manager_email,
+                        "is_primary_contact": 0,
+                    }
+                )
 
     def make_customer(self):
         customer = make_customer_and_address(
