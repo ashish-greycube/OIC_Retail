@@ -51,6 +51,12 @@ def get_data():
                     "label": "Expenses Statement",
                     "is_query_report": True,
                 },
+                {
+                    "type": "report",
+                    "name": "Sales Person Outlet Target Analysis",
+                    "label": "Sales Person Outlet Target Analysis",
+                    "is_query_report": True,
+                },
             ],
         },
     ]
