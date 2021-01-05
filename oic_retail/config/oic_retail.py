@@ -35,6 +35,11 @@ def get_data():
                     "type": "doctype",
                     "label": _("Territory Type"),
                 },
+                {
+                    "name": "Visit Activity",
+                    "type": "doctype",
+                    "label": _("Visit Activity"),
+                },
             ],
         },
         {

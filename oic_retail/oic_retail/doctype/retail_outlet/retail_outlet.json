@@ -1,428 +1,427 @@
 {
- "autoname": "format:{state_abbreviation}-{city_abbreviation}-{#}",
- "creation": "2021-01-03 07:28:06.492772",
- "doctype": "DocType",
- "editable_grid": 1,
- "engine": "InnoDB",
- "field_order": [
-  "outlet_name",
-  "outlet_status",
-  "column_break_2",
-  "outlet_type",
-  "outlet_not_prospect_reason",
-  "address_info_section",
-  "address_line_1",
-  "city",
-  "city_abbreviation",
-  "column_break_7",
-  "state",
-  "state_abbreviation",
-  "contact_info_section",
-  "outlet_owner",
-  "no_of_stores",
-  "manager",
-  "column_break_13",
-  "contact_number",
-  "contact_email",
-  "manager_contact",
-  "manager_email",
-  "other_details_section",
-  "is_website_available",
-  "is_optometrist_available",
-  "billing_software",
-  "approx_size_of_the_shop_sq_ft",
-  "number_of_employees",
-  "column_break_24",
-  "website_address",
-  "website_estimate",
-  "number_of_computers",
-  "number_of_tv_lcd_screen",
-  "average_monthly_sales",
-  "photos_section",
-  "front",
-  "business_card_1",
-  "column_break_33",
-  "inside",
-  "business_card_2",
-  "notes_section",
-  "outlet_remarks",
-  "renovation_amount_estimate",
-  "factors_for_sales_increase",
-  "column_break_40",
-  "years_in_business",
-  "territory",
-  "lenskart_feedback",
-  "difference_u_lenskart",
-  "monthly_sales_promo_budget",
-  "section_break_47",
-  "sales_person",
-  "outlet_location"
- ],
- "fields": [
-  {
-   "fieldname": "outlet_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Outlet Name",
-   "reqd": 1
-  },
-  {
-   "default": "Retailer",
-   "fieldname": "outlet_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Outlet Type",
-   "options": "Retailer\nEye Hospital\nOptometrist"
-  },
-  {
-   "fieldname": "address_info_section",
-   "fieldtype": "Section Break",
-   "label": "Address Info"
-  },
-  {
-   "fieldname": "address_line_1",
-   "fieldtype": "Data",
-   "label": "Address Line 1",
-   "reqd": 1
-  },
-  {
-   "fieldname": "city",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "City",
-   "options": "City CT",
-   "reqd": 1
-  },
-  {
-   "fetch_from": "city.city_abbreviation",
-   "fieldname": "city_abbreviation",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "City Abbreviation",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fetch_from": "city.state",
-   "fieldname": "state",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "State",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fetch_from": "city.state_abbreviation",
-   "fieldname": "state_abbreviation",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "State Abbreviation",
-   "read_only": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "contact_info_section",
-   "fieldtype": "Section Break",
-   "label": "Contact Info"
-  },
-  {
-   "fieldname": "outlet_owner",
-   "fieldtype": "Data",
-   "label": "Outlet Owner",
-   "reqd": 1
-  },
-  {
-   "fieldname": "no_of_stores",
-   "fieldtype": "Int",
-   "label": "No Of Stores",
-   "reqd": 1
-  },
-  {
-   "fieldname": "manager",
-   "fieldtype": "Data",
-   "label": "Manager"
-  },
-  {
-   "fieldname": "column_break_13",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "contact_number",
-   "fieldtype": "Data",
-   "label": "Contact Number",
-   "reqd": 1
-  },
-  {
-   "fieldname": "contact_email",
-   "fieldtype": "Data",
-   "label": "Contact Email",
-   "options": "Email",
-   "reqd": 1
-  },
-  {
-   "fieldname": "manager_contact",
-   "fieldtype": "Data",
-   "label": "Manager Contact"
-  },
-  {
-   "fieldname": "manager_email",
-   "fieldtype": "Data",
-   "label": "Manager Email"
-  },
-  {
-   "fieldname": "other_details_section",
-   "fieldtype": "Section Break",
-   "label": "Other Details"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_website_available",
-   "fieldtype": "Check",
-   "label": "Is Website Available",
-   "reqd": 1
-  },
-  {
-   "default": "0",
-   "fieldname": "is_optometrist_available",
-   "fieldtype": "Check",
-   "label": "Is Optometrist Available",
-   "options": "Yes\nNo",
-   "reqd": 1
-  },
-  {
-   "fieldname": "billing_software",
-   "fieldtype": "Select",
-   "label": "Billing Software",
-   "options": "NA\nOther\nTally",
-   "reqd": 1
-  },
-  {
-   "fieldname": "approx_size_of_the_shop_sq_ft",
-   "fieldtype": "Select",
-   "label": "Approx Size of the Shop Sq ft",
-   "options": "Less than 350 sq. ft\n350 sq.ft to 500 sq.ft\n500 sq.ft to 1000 sq.ft\n1000 sq.ft to 2000 sq.ft\nMore than 2000 sq.ft",
-   "reqd": 1
-  },
-  {
-   "default": "1",
-   "fieldname": "number_of_employees",
-   "fieldtype": "Int",
-   "label": "Number of Employees"
-  },
-  {
-   "fieldname": "column_break_24",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "website_address",
-   "fieldtype": "Data",
-   "label": "Website Address"
-  },
-  {
-   "fieldname": "website_estimate",
-   "fieldtype": "Data",
-   "label": "How much do you estimate is the cost to create your own website?"
-  },
-  {
-   "default": "1",
-   "fieldname": "number_of_computers",
-   "fieldtype": "Int",
-   "label": "Number of Computers",
-   "reqd": 1
-  },
-  {
-   "fieldname": "number_of_tv_lcd_screen",
-   "fieldtype": "Int",
-   "label": "Number of TV LCD Screen",
-   "reqd": 1
-  },
-  {
-   "fieldname": "average_monthly_sales",
-   "fieldtype": "Currency",
-   "label": "Average Monthly Sales",
-   "reqd": 1
-  },
-  {
-   "fieldname": "photos_section",
-   "fieldtype": "Section Break",
-   "label": "Photos"
-  },
-  {
-   "fieldname": "front",
-   "fieldtype": "Attach",
-   "label": "Front",
-   "reqd": 1
-  },
-  {
-   "fieldname": "business_card_1",
-   "fieldtype": "Attach",
-   "label": "Business Card 1"
-  },
-  {
-   "fieldname": "column_break_33",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "inside",
-   "fieldtype": "Attach",
-   "label": "Inside "
-  },
-  {
-   "fieldname": "business_card_2",
-   "fieldtype": "Attach",
-   "label": "Business Card 2"
-  },
-  {
-   "fieldname": "notes_section",
-   "fieldtype": "Section Break",
-   "label": "Notes"
-  },
-  {
-   "fieldname": "outlet_remarks",
-   "fieldtype": "Small Text",
-   "label": "Outlet Remarks",
-   "reqd": 1
-  },
-  {
-   "fieldname": "renovation_amount_estimate",
-   "fieldtype": "Data",
-   "label": "How much do you think you need to spend to make your shop like Lenskart and Specmakers?"
-  },
-  {
-   "fieldname": "factors_for_sales_increase",
-   "fieldtype": "Data",
-   "label": "What factors do you think will help you in increasing your sales ?"
-  },
-  {
-   "fieldname": "column_break_40",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "years_in_business",
-   "fieldtype": "Select",
-   "label": "Years in Business",
-   "options": "more than 10 years\n5 to 10 years\n1 to 3 years\n0 to 1 year\nless than a year",
-   "reqd": 1
-  },
-  {
-   "fieldname": "territory",
-   "fieldtype": "Link",
-   "label": "Territory",
-   "options": "Territory",
-   "reqd": 1
-  },
-  {
-   "fieldname": "lenskart_feedback",
-   "fieldtype": "Data",
-   "label": "What do you feel about Lenskart and Specmakers?"
-  },
-  {
-   "fieldname": "difference_u_lenskart",
-   "fieldtype": "Data",
-   "label": "What do you think is the difference between you and Lenskart/Specmakers?"
-  },
-  {
-   "fieldname": "monthly_sales_promo_budget",
-   "fieldtype": "Data",
-   "label": "Monthly Sales Promotion Budget"
-  },
-  {
-   "fieldname": "column_break_7",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_47",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "sales_person",
-   "fieldtype": "Link",
-   "label": "Sales Person",
-   "options": "Sales Person",
-   "reqd": 1
-  },
-  {
-   "fieldname": "outlet_location",
-   "fieldtype": "Geolocation",
-   "label": "Outlet Location"
-  },
-  {
-   "fieldname": "column_break_2",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "Listed",
-   "fieldname": "outlet_status",
-   "fieldtype": "Select",
-   "label": "Outlet Status",
-   "options": "Not Prospect\nListed\nAcquired"
-  },
-  {
-   "depends_on": "eval:doc.outlet_status==\"Not Prospect\"",
-   "fieldname": "outlet_not_prospect_reason",
-   "fieldtype": "Small Text",
-   "label": "Outlet No Prospect Reason"
-  }
- ],
- "modified": "2021-01-05 13:16:02.321845",
- "modified_by": "Administrator",
- "module": "OIC Retail",
- "name": "Retail Outlet",
- "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Sales User",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Sales Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Sales Master Manager",
-   "share": 1,
-   "write": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "track_changes": 1
+  "creation": "2021-01-03 07:28:06.492772",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "outlet_name",
+    "outlet_status",
+    "column_break_2",
+    "outlet_type",
+    "outlet_not_prospect_reason",
+    "address_info_section",
+    "address_line_1",
+    "city",
+    "city_abbreviation",
+    "column_break_7",
+    "state",
+    "state_abbreviation",
+    "contact_info_section",
+    "outlet_owner",
+    "no_of_stores",
+    "manager",
+    "column_break_13",
+    "contact_number",
+    "contact_email",
+    "manager_contact",
+    "manager_email",
+    "other_details_section",
+    "is_website_available",
+    "is_optometrist_available",
+    "billing_software",
+    "approx_size_of_the_shop_sq_ft",
+    "number_of_employees",
+    "column_break_24",
+    "website_address",
+    "website_estimate",
+    "number_of_computers",
+    "number_of_tv_lcd_screen",
+    "average_monthly_sales",
+    "photos_section",
+    "front",
+    "business_card_1",
+    "column_break_33",
+    "inside",
+    "business_card_2",
+    "notes_section",
+    "outlet_remarks",
+    "renovation_amount_estimate",
+    "factors_for_sales_increase",
+    "column_break_40",
+    "years_in_business",
+    "territory",
+    "lenskart_feedback",
+    "difference_u_lenskart",
+    "monthly_sales_promo_budget",
+    "section_break_47",
+    "sales_person",
+    "outlet_location"
+  ],
+  "fields": [
+    {
+      "fieldname": "outlet_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Outlet Name",
+      "reqd": 1
+    },
+    {
+      "default": "Retailer",
+      "fieldname": "outlet_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Outlet Type",
+      "options": "Retailer\nEye Hospital\nOptometrist"
+    },
+    {
+      "fieldname": "address_info_section",
+      "fieldtype": "Section Break",
+      "label": "Address Info"
+    },
+    {
+      "fieldname": "address_line_1",
+      "fieldtype": "Data",
+      "label": "Address Line 1",
+      "reqd": 1
+    },
+    {
+      "fieldname": "city",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "City",
+      "options": "City CT",
+      "reqd": 1
+    },
+    {
+      "fetch_from": "city.city_abbreviation",
+      "fieldname": "city_abbreviation",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "City Abbreviation",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fetch_from": "city.state",
+      "fieldname": "state",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "State",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fetch_from": "city.state_abbreviation",
+      "fieldname": "state_abbreviation",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "State Abbreviation",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "contact_info_section",
+      "fieldtype": "Section Break",
+      "label": "Contact Info"
+    },
+    {
+      "fieldname": "outlet_owner",
+      "fieldtype": "Data",
+      "label": "Outlet Owner",
+      "reqd": 1
+    },
+    {
+      "fieldname": "no_of_stores",
+      "fieldtype": "Int",
+      "label": "No Of Stores",
+      "reqd": 1
+    },
+    {
+      "fieldname": "manager",
+      "fieldtype": "Data",
+      "label": "Manager"
+    },
+    {
+      "fieldname": "column_break_13",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "contact_number",
+      "fieldtype": "Data",
+      "label": "Contact Number",
+      "reqd": 1
+    },
+    {
+      "fieldname": "contact_email",
+      "fieldtype": "Data",
+      "label": "Contact Email",
+      "options": "Email",
+      "reqd": 1
+    },
+    {
+      "fieldname": "manager_contact",
+      "fieldtype": "Data",
+      "label": "Manager Contact"
+    },
+    {
+      "fieldname": "manager_email",
+      "fieldtype": "Data",
+      "label": "Manager Email"
+    },
+    {
+      "fieldname": "other_details_section",
+      "fieldtype": "Section Break",
+      "label": "Other Details"
+    },
+    {
+      "default": "0",
+      "fieldname": "is_website_available",
+      "fieldtype": "Check",
+      "label": "Is Website Available",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "is_optometrist_available",
+      "fieldtype": "Check",
+      "label": "Is Optometrist Available",
+      "options": "Yes\nNo",
+      "reqd": 1
+    },
+    {
+      "fieldname": "billing_software",
+      "fieldtype": "Select",
+      "label": "Billing Software",
+      "options": "NA\nOther\nTally",
+      "reqd": 1
+    },
+    {
+      "fieldname": "approx_size_of_the_shop_sq_ft",
+      "fieldtype": "Select",
+      "label": "Approx Size of the Shop Sq ft",
+      "options": "Less than 350 sq. ft\n350 sq.ft to 500 sq.ft\n500 sq.ft to 1000 sq.ft\n1000 sq.ft to 2000 sq.ft\nMore than 2000 sq.ft",
+      "reqd": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "number_of_employees",
+      "fieldtype": "Int",
+      "label": "Number of Employees"
+    },
+    {
+      "fieldname": "column_break_24",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "website_address",
+      "fieldtype": "Data",
+      "label": "Website Address"
+    },
+    {
+      "fieldname": "website_estimate",
+      "fieldtype": "Data",
+      "label": "How much do you estimate is the cost to create your own website?"
+    },
+    {
+      "default": "1",
+      "fieldname": "number_of_computers",
+      "fieldtype": "Int",
+      "label": "Number of Computers",
+      "reqd": 1
+    },
+    {
+      "fieldname": "number_of_tv_lcd_screen",
+      "fieldtype": "Int",
+      "label": "Number of TV LCD Screen",
+      "reqd": 1
+    },
+    {
+      "fieldname": "average_monthly_sales",
+      "fieldtype": "Currency",
+      "label": "Average Monthly Sales",
+      "reqd": 1
+    },
+    {
+      "fieldname": "photos_section",
+      "fieldtype": "Section Break",
+      "label": "Photos"
+    },
+    {
+      "fieldname": "front",
+      "fieldtype": "Attach",
+      "label": "Front",
+      "reqd": 1
+    },
+    {
+      "fieldname": "business_card_1",
+      "fieldtype": "Attach",
+      "label": "Business Card 1"
+    },
+    {
+      "fieldname": "column_break_33",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "inside",
+      "fieldtype": "Attach",
+      "label": "Inside "
+    },
+    {
+      "fieldname": "business_card_2",
+      "fieldtype": "Attach",
+      "label": "Business Card 2"
+    },
+    {
+      "fieldname": "notes_section",
+      "fieldtype": "Section Break",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "outlet_remarks",
+      "fieldtype": "Small Text",
+      "label": "Outlet Remarks",
+      "reqd": 1
+    },
+    {
+      "fieldname": "renovation_amount_estimate",
+      "fieldtype": "Data",
+      "label": "How much do you think you need to spend to make your shop like Lenskart and Specmakers?"
+    },
+    {
+      "fieldname": "factors_for_sales_increase",
+      "fieldtype": "Data",
+      "label": "What factors do you think will help you in increasing your sales ?"
+    },
+    {
+      "fieldname": "column_break_40",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "years_in_business",
+      "fieldtype": "Select",
+      "label": "Years in Business",
+      "options": "more than 10 years\n5 to 10 years\n1 to 3 years\n0 to 1 year\nless than a year",
+      "reqd": 1
+    },
+    {
+      "fieldname": "territory",
+      "fieldtype": "Link",
+      "label": "Territory",
+      "options": "Territory",
+      "reqd": 1
+    },
+    {
+      "fieldname": "lenskart_feedback",
+      "fieldtype": "Data",
+      "label": "What do you feel about Lenskart and Specmakers?"
+    },
+    {
+      "fieldname": "difference_u_lenskart",
+      "fieldtype": "Data",
+      "label": "What do you think is the difference between you and Lenskart/Specmakers?"
+    },
+    {
+      "fieldname": "monthly_sales_promo_budget",
+      "fieldtype": "Data",
+      "label": "Monthly Sales Promotion Budget"
+    },
+    {
+      "fieldname": "column_break_7",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "section_break_47",
+      "fieldtype": "Section Break"
+    },
+    {
+      "fieldname": "sales_person",
+      "fieldtype": "Link",
+      "label": "Sales Person",
+      "options": "Sales Person",
+      "reqd": 1
+    },
+    {
+      "fieldname": "outlet_location",
+      "fieldtype": "Geolocation",
+      "label": "Outlet Location"
+    },
+    {
+      "fieldname": "column_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Listed",
+      "fieldname": "outlet_status",
+      "fieldtype": "Select",
+      "label": "Outlet Status",
+      "options": "Not Prospect\nListed\nAcquired"
+    },
+    {
+      "depends_on": "eval:doc.outlet_status==\"Not Prospect\"",
+      "fieldname": "outlet_not_prospect_reason",
+      "fieldtype": "Small Text",
+      "label": "Outlet No Prospect Reason"
+    }
+  ],
+  "modified": "2021-01-05 17:01:10.943448",
+  "modified_by": "Administrator",
+  "module": "OIC Retail",
+  "name": "Retail Outlet",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Sales User",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Sales Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Sales Master Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "track_changes": 1
 }

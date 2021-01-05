@@ -5,6 +5,7 @@
 from __future__ import unicode_literals
 import json
 import frappe
+from frappe.model.naming import make_autoname
 from frappe.model.document import Document
 from erpnext.accounts.doctype.sales_invoice.pos import make_customer_and_address
 from erpnext.selling.doctype.customer.customer import make_address
@@ -12,6 +13,11 @@ from frappe.utils import cint
 
 
 class RetailOutlet(Document):
+    def autoname(self):
+        self.name = make_autoname(
+            f"{self.state_abbreviation}.-.{self.city_abbreviation}.-.#"
+        )
+
     def after_insert(self):
         if self.outlet_status == "Listed":
             self.make_customer()

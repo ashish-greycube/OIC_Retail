@@ -12,19 +12,18 @@ frappe.query_reports["Sales Person Outlet Target Analysis"] = {
       reqd: 0,
     },
     {
-      fieldname: "year",
-      label: __("Year"),
-      fieldtype: "Select",
-      options: [2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030],
+      fieldname: "from_date",
+      label: __("From"),
+      fieldtype: "Date",
       reqd: 0,
+      default: moment().startOf("month"),
     },
     {
-      fieldname: "month",
-      label: __("Month"),
-      fieldtype: "Select",
-      options: "\nJan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug\nSep\nOct\nNov\nDec",
+      fieldname: "to_date",
+      label: __("To"),
+      fieldtype: "Date",
+      reqd: 0,
+      default: moment().endOf("month"),
     },
-
-    ,
   ],
 };
