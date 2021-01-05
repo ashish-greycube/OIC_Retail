@@ -56,6 +56,7 @@ app_license = "MIT"
 
 # before_install = "oic_retail.install.before_install"
 # after_install = "oic_retail.install.after_install"
+after_migrate = "oic_retail.hook_methods.after_migrate"
 
 # Desk Notifications
 # ------------------
