@@ -359,8 +359,7 @@
    "fieldname": "outlet_status",
    "fieldtype": "Select",
    "label": "Outlet Status",
-   "options": "Not Prospect\nListed\nAcquired",
-   "read_only": 1
+   "options": "Not Prospect\nListed\nAcquired"
   },
   {
    "depends_on": "eval:doc.outlet_status==\"Not Prospect\"",
@@ -369,7 +368,7 @@
    "label": "Outlet No Prospect Reason"
   }
  ],
- "modified": "2021-01-05 10:25:43.578678",
+ "modified": "2021-01-05 13:16:02.321845",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Retail Outlet",
