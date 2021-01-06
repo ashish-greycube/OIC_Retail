@@ -5,9 +5,9 @@
 from __future__ import unicode_literals
 import json
 import frappe
+from frappe import _
 from frappe.model.naming import make_autoname
 from frappe.model.document import Document
-from erpnext.accounts.doctype.sales_invoice.pos import make_customer_and_address
 from erpnext.selling.doctype.customer.customer import make_address
 from frappe.utils import cint
 
@@ -41,19 +41,28 @@ class RetailOutlet(Document):
                 )
 
     def make_customer(self):
-        customer = make_customer_and_address(
-            {self.outlet_name: json.dumps({"full_name": self.outlet_name})}
+        customer_doc = frappe.new_doc("Customer")
+        customer_doc.customer_name = self.outlet_name
+        customer_doc.customer_type = "Company"
+        customer_doc.customer_group = frappe.db.get_single_value(
+            "Selling Settings", "customer_group"
+        ) or frappe.db.get_value("Customer Group", {"is_group": 0}, "name")
+
+        customer_doc.territory = (
+            self.territory
+            or frappe.db.get_single_value("Selling Settings", "territory")
+            or _("All Territories")
         )
-        customer = frappe.get_doc("Customer", customer[0])
-        customer.append(
+
+        customer_doc.append(
             "sales_team",
             {"sales_person": self.sales_person, "allocated_percentage": 100},
         )
-        customer.retail_outlet_cf = self.name
-        customer.account_manager = frappe.session.user
-        if self.territory:
-            customer.territory = self.territory
-        customer.save()
+        customer_doc.retail_outlet_cf = self.name
+        customer_doc.account_manager = frappe.session.user
+
+        customer_doc.flags.ignore_mandatory = True
+        customer_doc.save(ignore_permissions=True)
 
     def get_sales_person_for_user():
         sales_person = frappe.db.sql(
