@@ -127,3 +127,8 @@ doc_events = {
 # override_doctype_dashboards = {
 # 	"Task": "oic_retail.task.get_dashboard_data"
 # }
+
+
+fixtures = [
+    {"dt": "Desk Page", "filters": [["name", "in", ["OIC Retail"]]]},
+]
