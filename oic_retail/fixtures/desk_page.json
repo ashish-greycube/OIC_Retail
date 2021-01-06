@@ -1,0 +1,56 @@
+[
+ {
+  "cards": [
+   {
+    "hidden": 0,
+    "label": "Masters",
+    "links": "[\n                    {\n                    \"name\": \"Retail Outlet\",\n                    \"type\": \"doctype\",\n                    \"label\": \"Retail Outlet\"\n                },\n                {\n                    \"name\": \"Outlet Visit\",\n                    \"type\": \"doctype\",\n                    \"label\": \"Outlet Visit\"\n                },\n                {\n                    \"name\": \"Monthly Outlet Target\",\n                    \"type\": \"doctype\",\n                    \"label\": \"Monthly Outlet Target\"\n                }\n]",
+    "parent": "OIC Retail",
+    "parentfield": "cards",
+    "parenttype": "Desk Page"
+   },
+   {
+    "hidden": 0,
+    "label": "Reports",
+    "links": "[                {\n                    \"type\": \"report\",\n                    \"name\": \"Expenses Statement\",\n                    \"label\": \"Expenses Statement\",\n                    \"is_query_report\": true\n                },\n                {\n                    \"type\": \"report\",\n                    \"name\": \"Sales Person Outlet Target Analysis\",\n                    \"label\": \"Sales Person Outlet Target Analysis\",\n                    \"is_query_report\": true\n                }]",
+    "parent": "OIC Retail",
+    "parentfield": "cards",
+    "parenttype": "Desk Page"
+   },
+   {
+    "hidden": 0,
+    "label": "Setup",
+    "links": "[                {\"name\": \"City CT\", \"type\": \"doctype\", \"label\": \"City\"},\n                {\"name\": \"State CT\", \"type\": \"doctype\", \"label\": \"State\"},\n                {\n                    \"name\": \"Territory Type CT\",\n                    \"type\": \"doctype\",\n                    \"label\": \"Territory Type\"\n                },\n                {\n                    \"name\": \"Visit Activity\",\n                    \"type\": \"doctype\",\n                    \"label\": \"Visit Activity\"\n                }\n]",
+    "parent": "OIC Retail",
+    "parentfield": "cards",
+    "parenttype": "Desk Page"
+   }
+  ],
+  "cards_label": null,
+  "category": "Domains",
+  "charts": [],
+  "charts_label": null,
+  "developer_mode_only": 0,
+  "disable_user_customization": 0,
+  "docstatus": 0,
+  "doctype": "Desk Page",
+  "extends": null,
+  "extends_another_page": 0,
+  "for_user": null,
+  "hide_custom": 0,
+  "is_standard": 0,
+  "label": "OIC Retail",
+  "modified": "2021-01-06 09:19:57.457488",
+  "module": "OIC Retail",
+  "name": "OIC Retail",
+  "onboarding": null,
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "pin_to_bottom": 0,
+  "pin_to_top": 1,
+  "restrict_to_domain": null,
+  "shortcuts": [],
+  "shortcuts_label": "Documents"
+ }
+]
