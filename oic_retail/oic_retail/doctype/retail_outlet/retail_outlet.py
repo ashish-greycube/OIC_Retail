@@ -60,7 +60,8 @@ class RetailOutlet(Document):
         )
         customer_doc.retail_outlet_cf = self.name
         customer_doc.account_manager = frappe.session.user
-
+        if frappe.db.exists("Customer Group", self.outlet_type):
+            customer_doc.customer_group = self.outlet_type
         customer_doc.flags.ignore_mandatory = True
         customer_doc.save(ignore_permissions=True)
 
