@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 import json
 import frappe
 from frappe import _
+from frappe.desk.page.setup_wizard.setup_wizard import make_records
 
 
 def on_submit_contract(doc, method):
@@ -81,26 +82,32 @@ def after_migrate():
             "insert_after": "section_break_4",
             "fieldtype": "Data",
             "depends_on": "eval:doc.expense_type == 'Travel';",
-        }
-        # {
-        #     "doctype": "Customer Group",
-        #     "customer_group_name": _("Retailer"),
-        #     "is_group": 0,
-        #     "parent_customer_group": _("All Customer Groups"),
-        # },
-        # {
-        #     "doctype": "Customer Group",
-        #     "customer_group_name": _("Eye Hospital"),
-        #     "is_group": 0,
-        #     "parent_customer_group": _("All Customer Groups"),
-        # },
-        # {
-        #     "doctype": "Customer Group",
-        #     "customer_group_name": _("Optometrist"),
-        #     "is_group": 0,
-        #     "parent_customer_group": _("All Customer Groups"),
-        # },
+        },
     ]
     for d in custom_fields:
         if not frappe.get_meta(d["dt"]).has_field(d["fieldname"]):
             frappe.get_doc(d).insert()
+
+    fixtures = [
+        {
+            "doctype": "Customer Group",
+            "customer_group_name": _("Retailer"),
+            "is_group": 0,
+            "parent_customer_group": _("All Customer Groups"),
+        },
+        {
+            "doctype": "Customer Group",
+            "customer_group_name": _("Eye Hospital"),
+            "is_group": 0,
+            "parent_customer_group": _("All Customer Groups"),
+        },
+        {
+            "doctype": "Customer Group",
+            "customer_group_name": _("Optometrist"),
+            "is_group": 0,
+            "parent_customer_group": _("All Customer Groups"),
+        },
+    ]
+
+    make_records(fixtures)
+
