@@ -30,9 +30,9 @@ class RetailOutlet(Document):
 
     def after_insert(self):
         if self.outlet_status == "Listed":
-            self.make_customer()
-            self.make_address()
-            self.make_contact(
+            customer_doc = self.make_customer()
+            address = self.make_address()
+            contact = self.make_contact(
                 {
                     "full_name": self.contact_name,
                     "phone": self.contact_phone,
@@ -42,6 +42,14 @@ class RetailOutlet(Document):
                     "is_primary_contact": 1,
                 }
             )
+
+            customer_doc.update(
+                {
+                    "customer_primary_address": address.name,
+                    "customer_primary_contact": contact.name,
+                }
+            )
+            customer_doc.save()
 
     def make_customer(self):
         customer_doc = frappe.new_doc("Customer")
@@ -67,9 +75,10 @@ class RetailOutlet(Document):
             customer_doc.customer_group = self.outlet_type
         customer_doc.flags.ignore_mandatory = True
         customer_doc.save(ignore_permissions=True)
+        return customer_doc
 
     def make_address(self):
-        make_address(
+        return make_address(
             {
                 "doctype": "Customer",
                 "name": self.outlet_name,
