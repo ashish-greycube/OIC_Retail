@@ -13,11 +13,6 @@ from frappe.utils import cint, today
 
 
 class RetailOutlet(Document):
-    def autoname(self):
-        self.name = make_autoname(
-            f"{self.state_abbreviation}.-.{self.city_abbreviation}.-.#"
-        )
-
     def validate(self):
         if self.outlet_status == "Acquired":
             if not frappe.db.exists(
@@ -39,21 +34,14 @@ class RetailOutlet(Document):
             self.make_address()
             self.make_contact(
                 {
-                    "full_name": self.outlet_owner,
-                    "mobile_no": self.contact_number,
+                    "full_name": self.contact_name,
+                    "phone": self.contact_phone,
+                    "mobile_no": self.contact_mobile,
                     "email_id": self.contact_email,
+                    "designation": self.designation,
                     "is_primary_contact": 1,
                 }
             )
-            if self.manager:
-                self.make_contact(
-                    {
-                        "full_name": self.manager,
-                        "mobile_no": self.manager_contact,
-                        "email_id": self.manager_email,
-                        "is_primary_contact": 0,
-                    }
-                )
 
     def make_customer(self):
         customer_doc = frappe.new_doc("Customer")
@@ -86,9 +74,11 @@ class RetailOutlet(Document):
                 "doctype": "Customer",
                 "name": self.outlet_name,
                 "address_line1": self.address_line_1,
+                "address_line2": self.address_line_2,
                 "city": self.city,
                 "state": self.state,
                 "country": frappe.db.get_default("country"),
+                "pincode": self.pin_code,
             },
             is_primary_address=1,
         )
@@ -104,8 +94,26 @@ class RetailOutlet(Document):
         )
         if args.get("email_id"):
             contact.add_email(args.get("email_id"), is_primary=True)
+        if args.get("phone"):
+            contact.append(
+                "phone_nos",
+                {
+                    "phone": args.get("phone"),
+                    "is_primary_phone": 1,
+                    "is_primary_mobile_no": 0,
+                },
+            )
+
         if args.get("mobile_no"):
-            contact.add_phone(args.get("mobile_no"), is_primary_mobile_no=True)
+            contact.append(
+                "phone_nos",
+                {
+                    "phone": args.get("mobile_no"),
+                    "is_primary_phone": 0,
+                    "is_primary_mobile_no": 1,
+                },
+            )
+
         contact.insert()
 
         return contact
