@@ -83,7 +83,8 @@
   {
    "fieldname": "address_line_1",
    "fieldtype": "Data",
-   "label": "Address Line 1"
+   "label": "Address Line 1",
+   "reqd": 1
   },
   {
    "fieldname": "city",
@@ -91,7 +92,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "City/Town",
-   "options": "Chennai\nVijaywada\nHyderabad"
+   "options": "\nChennai\nVijaywada\nHyderabad",
+   "reqd": 1
   },
   {
    "fieldname": "state",
@@ -99,7 +101,8 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "State",
-   "options": "Andhra Pradesh\nKerala\nKarnataka\nTamil Nadu\nTelangana"
+   "options": "\nAndhra Pradesh\nKerala\nKarnataka\nTamil Nadu\nTelangana",
+   "reqd": 1
   },
   {
    "fieldname": "contact_info_section",
@@ -285,7 +288,8 @@
   {
    "fieldname": "contact_name",
    "fieldtype": "Data",
-   "label": "Person Name"
+   "label": "Person Name",
+   "reqd": 1
   },
   {
    "fieldname": "designation",
@@ -301,7 +305,8 @@
   {
    "fieldname": "contact_mobile",
    "fieldtype": "Data",
-   "label": "Mobile"
+   "label": "Mobile",
+   "reqd": 1
   },
   {
    "fieldname": "business_card_section",
@@ -314,11 +319,11 @@
    "label": "Retail Outlet Infrastructure"
   },
   {
-   "default": "{territory_abbreviation}.#",
+   "default": "{territory_abbreviation}.-.#",
    "fieldname": "naming_series",
    "fieldtype": "Select",
    "label": "Series",
-   "options": "{territory_abbreviation}.#",
+   "options": "{territory_abbreviation}.-.#",
    "reqd": 1
   },
   {
@@ -344,7 +349,7 @@
   }
  ],
  "links": [],
- "modified": "2021-01-19 16:12:39.554657",
+ "modified": "2021-01-19 19:06:10.361566",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Retail Outlet",
