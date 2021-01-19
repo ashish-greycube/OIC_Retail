@@ -9,7 +9,7 @@ from frappe import _
 from frappe.model.naming import make_autoname
 from frappe.model.document import Document
 from erpnext.selling.doctype.customer.customer import make_address
-from frappe.utils import cint
+from frappe.utils import cint, today
 
 
 class RetailOutlet(Document):
@@ -17,6 +17,21 @@ class RetailOutlet(Document):
         self.name = make_autoname(
             f"{self.state_abbreviation}.-.{self.city_abbreviation}.-.#"
         )
+
+    def validate(self):
+        if self.outlet_status == "Acquired":
+            if not frappe.db.exists(
+                """
+            select c.name, c.retail_outlet_cf 
+                from tabCustomer c
+                inner join tabContract con on con.docstatus = 1 and con.party_name = c.name 
+                and c.retail_outlet_cf = %s
+                and %s BETWEEN con.start_date and con.end_date""",
+                (self.name, today()),
+            ):
+                frappe.throw(
+                    "Cannot set Outlet Status to Acquired without an active Contract."
+                )
 
     def after_insert(self):
         if self.outlet_status == "Listed":
@@ -64,20 +79,6 @@ class RetailOutlet(Document):
             customer_doc.customer_group = self.outlet_type
         customer_doc.flags.ignore_mandatory = True
         customer_doc.save(ignore_permissions=True)
-
-    def get_sales_person_for_user():
-        sales_person = frappe.db.sql(
-            """
-                select sp.name
-                from tabEmployee e
-                inner join `tabSales Person` sp on sp.employee = e.name
-                where e.user_id = %(user)s""",
-            dict(user=frappe.session.user),
-        )
-
-        if not sales_person:
-            frappe.throw("%s not associated with a Sales Person" % frappe.session.user)
-        return sales_person[0][0]
 
     def make_address(self):
         make_address(
