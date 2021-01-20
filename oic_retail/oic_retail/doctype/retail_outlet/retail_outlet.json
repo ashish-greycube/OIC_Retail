@@ -44,10 +44,9 @@
   "is_internet_available",
   "number_of_tv_lcd_screen",
   "number_of_employees",
-  "renovation_amount_estimate",
-  "factors_for_sales_increase",
   "competition_understanding_section",
   "lenskart_feedback",
+  "renovation_amount_estimate",
   "difference_u_lenskart",
   "promotions_section",
   "monthly_sales_promo_budget",
@@ -206,11 +205,6 @@
    "label": "How much do you think you need to spend to make your shop like Lenskart and Specmakers?"
   },
   {
-   "fieldname": "factors_for_sales_increase",
-   "fieldtype": "Data",
-   "label": "What factors do you think will help you in increasing your sales ?"
-  },
-  {
    "fieldname": "years_in_business",
    "fieldtype": "Select",
    "label": "Years in Business",
@@ -349,7 +343,7 @@
   }
  ],
  "links": [],
- "modified": "2021-01-19 19:06:10.361566",
+ "modified": "2021-01-20 18:21:02.579876",
  "modified_by": "Administrator",
  "module": "OIC Retail",
  "name": "Retail Outlet",
