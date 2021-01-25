@@ -13,7 +13,7 @@ Monthly Outlet Target - To Set Salesman wise monthly targets
 
 ### Customization to ERPNext
 
-On New creation of the Outlet,  Customer is created in background and the outlet link is stored in the customer
+On New creation of the Outlet,  Customer, Address and Contact is created in background and the outlet link is stored in the customer
 
 On Creation of Contract with the Customer ,the status of the Retail Outlet is changed to Acquired
 
