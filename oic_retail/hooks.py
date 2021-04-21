@@ -130,5 +130,5 @@ doc_events = {
 
 
 fixtures = [
-    {"dt": "Desk Page", "filters": [["name", "in", ["OIC Retail"]]]},
+    {"dt": "Workspace", "filters": [["name", "in", ["OIC Retail"]]]},
 ]
